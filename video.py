@@ -4,7 +4,7 @@ import yt_dlp
 def download_youtube_content(urls, output_path, format='mp4'):
     ydl_opts = {
         'outtmpl': os.path.join(output_path, '%(title)s.%(ext)s'),
-        'format': 'best',  # This will get the best quality single file
+        'format': 'best',
     }
 
     if format == 'mp3':
@@ -36,7 +36,6 @@ def download_youtube_content(urls, output_path, format='mp4'):
         except Exception as e:
             print(f"An error occurred with video at {url}: {str(e)}")
 
-# Example usage
 urls = input("Enter the YouTube video URLs (comma separated): ").split(',')
 urls = [url.strip() for url in urls]
 format = input("Enter the desired format (mp4/mp3): ").lower()
