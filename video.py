@@ -12,7 +12,6 @@ def download_content(urls, output_path, content_type='youtube', format='mp4'):
         'progress_hooks': [logging_hook],
     }
 
-    # Configure ydl options based on content type
     if content_type == 'youtube':
         if format == 'mp3':
             ydl_opts.update({
